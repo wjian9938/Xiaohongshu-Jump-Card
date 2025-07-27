@@ -67,14 +67,14 @@ module.exports = {
     }
   ],
   
-  // 部署配置 (宝塔面板)
+  // 部署配置示例 - 请根据实际情况修改
   deploy: {
     production: {
       user: 'your_server_user',
       host: 'your-server.com',
       ref: 'origin/main',
       repo: 'git@github.com:your-username/your-repo.git',
-      path: '/path/to/your/app',
+      path: '/www/wwwroot/your-domain',
       'post-deploy': 'npm install --production && pm2 reload ecosystem.config.js --env production'
     }
   }

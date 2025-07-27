@@ -18,10 +18,9 @@ fi
 
 # 检查环境配置文件
 if [ ! -f ".env" ]; then
-    echo "⚠️  .env文件不存在，复制生产配置模板..."
-    cp env.production .env
-    echo "✅ 请编辑.env文件配置数据库等信息"
-    echo "   nano .env"
+    echo "⚠️  .env文件不存在，请根据env.example创建..."
+    echo "   cp env.example .env"
+    echo "   nano .env  # 编辑配置信息"
     exit 1
 fi
 
