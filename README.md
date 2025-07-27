@@ -117,7 +117,6 @@ POST
 ├── routes/                # API路由
 ├── public/                # 前端文件
 ├── logs/                  # 日志文件
-└── android-hook/          # Android Hook模块
 ```
 
 ## 🔧 管理命令
@@ -250,6 +249,12 @@ loadtest -n 1000 -c 10 https://yourdomain.com/api/health
 - 检查PM2进程状态
 - 验证Nginx配置正确性
 - 确认数据库连接正常
+- <img width="1664" height="842" alt="image" src="https://github.com/user-attachments/assets/55af7fa6-11e3-46b7-861d-b6a93a75fbf3" />
+- <img width="1679" height="960" alt="image" src="https://github.com/user-attachments/assets/dd0680c5-2a26-403b-a129-043b600b3661" />
+- <img width="1653" height="836" alt="image" src="https://github.com/user-attachments/assets/a3601be9-89b0-4142-b3af-29b4f36df044" />
+
+
+
 - 实际部署：hongshuka.site
 - 账号：123456
 - 密码：123456
