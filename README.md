@@ -249,4 +249,9 @@ loadtest -n 1000 -c 10 https://yourdomain.com/api/health
 - 查看日志文件排查问题
 - 检查PM2进程状态
 - 验证Nginx配置正确性
-- 确认数据库连接正常 
+- 确认数据库连接正常
+- 实际部署：hongshuka.site
+- 账号：123456
+- 密码：123456
+-   ![一点科技微信码](https://github.com/user-attachments/assets/33e86168-89da-4e29-a52c-1f405b9a718f)
+
