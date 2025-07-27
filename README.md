@@ -103,7 +103,7 @@ POST
 ## 📁 生产环境结构
 
 ```
-/var/www/hongshuka/
+/var/www/html/app/
 ├── server.js              # 主服务器
 ├── package.json           # 依赖配置
 ├── .env                   # 环境配置 (重要!)
@@ -128,16 +128,16 @@ POST
 pm2 status
 
 # 查看日志
-pm2 logs hongshuka-card
+pm2 logs xiaohongshu-card-app
 
 # 重启应用
-pm2 restart hongshuka-card
+pm2 restart xiaohongshu-card-app
 
 # 停止应用
-pm2 stop hongshuka-card
+pm2 stop xiaohongshu-card-app
 
 # 删除应用
-pm2 delete hongshuka-card
+pm2 delete xiaohongshu-card-app
 ```
 
 ### 数据库管理

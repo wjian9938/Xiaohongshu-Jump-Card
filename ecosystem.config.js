@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'card',
+      name: 'xiaohongshu-card-app',
       script: 'server.js',
       instances: 1, // 单实例模式，避免集群复杂性
       exec_mode: 'fork', // fork模式更稳定
@@ -13,11 +13,11 @@ module.exports = {
         NODE_ENV: 'production',
         PORT: 3000
       },
-      // 生产环境配置
+      // 内存和重启配置
       max_memory_restart: '1G',
-      min_uptime: '60s', // 增加最小运行时间到60秒
-      max_restarts: 3, // 进一步减少最大重启次数
-      restart_delay: 10000, // 增加重启延迟到10秒
+      min_uptime: '60s',
+      max_restarts: 3,
+      restart_delay: 10000
       
       // 日志配置
       log_file: './logs/combined.log',
@@ -27,16 +27,16 @@ module.exports = {
       merge_logs: true,
       
       // 监控配置
-      watch: false, // 生产环境不开启文件监控
+      watch: false,
       ignore_watch: ['node_modules', 'logs', 'uploads', 'temp'],
       
       // 自动重启配置
       autorestart: true,
       node_args: '--max_old_space_size=1024',
       
-      // 错误处理 - 更宽松的设置
-      exp_backoff_restart_delay: 1000, // 指数退避重启延迟
-      max_memory_restart: '800M', // 内存限制
+      // 错误处理配置
+      exp_backoff_restart_delay: 1000,
+      max_memory_restart: '800M',
       
       // 健康检查
       kill_timeout: 10000, // 增加kill超时时间
@@ -67,15 +67,17 @@ module.exports = {
     }
   ],
   
-  // 部署配置示例 - 请根据实际情况修改
+  // 部署配置模板 - 生产环境请根据实际情况配置
   deploy: {
     production: {
-      user: 'your_server_user',
-      host: 'your-server.com',
+      user: 'deploy_user',
+      host: 'production-server.com',
       ref: 'origin/main',
-      repo: 'git@github.com:your-username/your-repo.git',
-      path: '/www/wwwroot/your-domain',
-      'post-deploy': 'npm install --production && pm2 reload ecosystem.config.js --env production'
+      repo: 'git@github.com:username/repository-name.git',
+      path: '/var/www/html/app',
+      'pre-deploy-local': '',
+      'post-deploy': 'npm ci --production && pm2 reload ecosystem.config.js --env production && pm2 save',
+      'pre-setup': ''
     }
   }
 }; 

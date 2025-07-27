@@ -84,7 +84,7 @@ const config = {
 
   // 邮件配置
   email: {
-    host: process.env.EMAIL_HOST || 'smtp.qq.com',
+    host: process.env.EMAIL_HOST || 'smtp.example.com',
     port: process.env.EMAIL_PORT || 587,
     secure: false,
     auth: {
