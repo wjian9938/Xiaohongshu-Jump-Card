@@ -143,7 +143,6 @@ systemctl restart nginx
 
 - **网站**: https://yourdomain.com
 - **API健康检查**: https://yourdomain.com/api/health  
-- **Hook API**: https://yourdomain.com/api/hook/getcard
 
 ## 🎯 核心功能
 
